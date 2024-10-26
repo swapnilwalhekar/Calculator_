@@ -27,9 +27,7 @@ export default function App() {
     setMultiplication(result);
   };
 
-  const handleClearAll = (value1, value2) => {
-    let result = Number(value1) * Number(value2);
-
+  const handleClearAll = () => {
     setFirstValue(0);
     setSecondValue(0);
     setAddition(0);
@@ -39,9 +37,9 @@ export default function App() {
 
   return (
     <>
-      <h3>Calcuator</h3>
+      <h3>Calculator</h3>
       <div className="app">
-        <label>Value 1:</label>
+        <label>Number 1 :</label>
         <input
           type="text"
           value={firstValue}
@@ -50,7 +48,7 @@ export default function App() {
           }}
         />
 
-        <label>Value 2:</label>
+        <label>Number 2 :</label>
         <input
           type="text"
           value={secondValue}
@@ -68,9 +66,7 @@ export default function App() {
         <Button onClick={() => handleMultiplication(firstValue, secondValue)}>
           Multiply
         </Button>
-        <Button onClick={() => handleClearAll(firstValue, secondValue)}>
-          Clear All
-        </Button>
+        <Button onClick={() => handleClearAll()}>Clear All</Button>
       </div>
 
       <h4>Addition of numbers is: {addition}</h4>
