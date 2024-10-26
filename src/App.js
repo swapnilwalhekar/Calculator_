@@ -39,22 +39,20 @@ export default function App() {
     <>
       <h3>Calculator</h3>
       <div className="app">
-        <label>Number 1 :</label>
+        <label htmlFor="first-value">Number 1 :</label>
         <input
+          id="first-value"
           type="text"
           value={firstValue}
-          onChange={(e) => {
-            setFirstValue(e.target.value);
-          }}
+          onChange={(e) => setFirstValue(e.target.value)}
         />
 
-        <label>Number 2 :</label>
+        <label htmlFor="second-value">Number 2 :</label>
         <input
+          id="second-value"
           type="text"
           value={secondValue}
-          onChange={(e) => {
-            setSecondValue(e.target.value);
-          }}
+          onChange={(e) => setSecondValue(e.target.value)}
         />
 
         <Button onClick={() => handleAddition(firstValue, secondValue)}>
@@ -66,12 +64,12 @@ export default function App() {
         <Button onClick={() => handleMultiplication(firstValue, secondValue)}>
           Multiply
         </Button>
-        <Button onClick={() => handleClearAll()}>Clear All</Button>
+        <Button onClick={handleClearAll}>Clear All</Button>
       </div>
 
-      <h4>Addition of numbers is: {addition}</h4>
-      <h4>Substraction of numbers is: {substraction}</h4>
-      <h4>Multiplication of numbers is: {multiplication}</h4>
+      <h4>Addition of numbers is : {addition}</h4>
+      <h4>Substraction of numbers is : {substraction}</h4>
+      <h4>Multiplication of numbers is : {multiplication}</h4>
     </>
   );
 }
